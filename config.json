@@ -1,0 +1,99 @@
+{
+  "birth": {
+    "image_path": "templates/birth.jpg",
+    "fields": [
+      {
+        "text": "Новый текст",
+        "x": 338,
+        "y": 225,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false
+      }
+    ]
+  },
+  "death": {
+    "image_path": "templates/death.jpg",
+    "fields": []
+  },
+  "divorce": {
+    "image_path": "templates/divorce.jpg",
+    "fields": []
+  },
+  "marriage": {
+    "image_path": "templates/marriage.jpg",
+    "fields": []
+  },
+  "inn": {
+    "image_path": "templates/inn.jpg",
+    "fields": [
+      {
+        "text": "7  7  2  2  0  1  0  0  2  0",
+        "x": 256,
+        "y": 658,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false
+      },
+      {
+        "text": "\"Светлый Путь\"",
+        "x": 507,
+        "y": 280,
+        "font": "arial.ttf",
+        "font_size": 12,
+        "bold": false,
+        "italic": false
+      },
+      {
+        "text": "7  7  4  5  0  1  0  0  5",
+        "x": 476,
+        "y": 659,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false
+      },
+      {
+        "text": "7  7  0  4",
+        "x": 576,
+        "y": 534,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false
+      },
+      {
+        "text": "1  1  2  4  7  7  3  4  5  6  7  8  9",
+        "x": 272,
+        "y": 441,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false
+      },
+      {
+        "text": "25.08.2007",
+        "x": 390,
+        "y": 488,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false
+      }
+    ]
+  },
+  "inn_2004": {
+    "image_path": "templates/inn_2004.jpg",
+    "fields": []
+  },
+  "inn_2004_2": {
+    "image_path": "templates/inn_2004_2.jpg",
+    "fields": []
+  },
+  "inn_esp": {
+    "image_path": "templates/inn_esp.jpg",
+    "fields": []
+  }
+}
