@@ -1,0 +1,8 @@
+/output/*
+/templates/*
+/stamp/*
+/signatures/*
+/random/*
+/pdf/*
+/jpg/*
+.idea/*

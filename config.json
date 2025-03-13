@@ -3,13 +3,275 @@
     "image_path": "templates/birth.jpg",
     "fields": [
       {
-        "text": "Новый текст",
-        "x": 338,
+        "text": "Сорокин",
+        "x": 335,
         "y": 225,
         "font": "arial.ttf",
         "font_size": 14,
+        "bold": true,
+        "italic": true,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/male_surnames.txt"
+      },
+      {
+        "text": "Эдуард",
+        "x": 263,
+        "y": 253,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/male_names.txt"
+      },
+      {
+        "text": "24.09.2019",
+        "x": 336,
+        "y": 276,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/number_date.txt"
+      },
+      {
+        "text": "девятого марта",
+        "x": 335,
+        "y": 300,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/letter_date.txt"
+      },
+      {
+        "text": "две тысячи двадцать второго года",
+        "x": 334,
+        "y": 322,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/letter_year.txt"
+      },
+      {
+        "text": "г. Москва",
+        "x": 347,
+        "y": 347,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Россия",
+        "x": 329,
+        "y": 372,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "2010",
+        "x": 174,
+        "y": 421,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/act_year.txt"
+      },
+      {
+        "text": "июня",
+        "x": 339,
+        "y": 419,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/act_month.txt"
+      },
+      {
+        "text": "12",
+        "x": 529,
+        "y": 419,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/act_date.txt"
+      },
+      {
+        "text": "1024",
+        "x": 357,
+        "y": 441,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Кузьмин",
+        "x": 345,
+        "y": 465,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/male_surnames.txt"
+      },
+      {
+        "text": "Марк",
+        "x": 262,
+        "y": 491,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/male_names.txt"
+      },
+      {
+        "text": "гражданин России",
+        "x": 336,
+        "y": 515,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "русский",
+        "x": 338,
+        "y": 538,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Алексеева",
+        "x": 334,
+        "y": 565,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/female_surnames.txt"
+      },
+      {
+        "text": "Маргарита",
+        "x": 286,
+        "y": 586,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/female_names.txt"
+      },
+      {
+        "text": "гражданка России",
+        "x": 328,
+        "y": 612,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "русская",
+        "x": 334,
+        "y": 636,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Московский городской ЗАГС",
+        "x": 451,
+        "y": 659,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Управления ЗАГС г. Москвы",
+        "x": 325,
+        "y": 682,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "3",
+        "x": 295,
+        "y": 739,
+        "font": "arial.ttf",
+        "font_size": 14,
         "bold": false,
-        "italic": false
+        "italic": false,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/act_date.txt"
+      },
+      {
+        "text": "мая",
+        "x": 429,
+        "y": 736,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/act_month.txt"
+      },
+      {
+        "text": "2041",
+        "x": 577,
+        "y": 737,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/act_year.txt"
+      },
+      {
+        "text": "Николаев",
+        "x": 598,
+        "y": 796,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/male_surnames.txt"
+      },
+      {
+        "text": "Михайлович",
+        "x": 390,
+        "y": 251,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/male_lastnames.txt"
+      },
+      {
+        "text": "Леонидович",
+        "x": 411,
+        "y": 491,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/male_lastnames.txt"
+      },
+      {
+        "text": "Андреевна",
+        "x": 393,
+        "y": 585,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": true,
+        "italic": true,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/female_lastnames.txt"
       }
     ]
   },
@@ -99,6 +361,84 @@
   },
   "inn_esp": {
     "image_path": "templates/inn_esp.jpg",
-    "fields": []
+    "fields": [
+      {
+        "text": "Андреева",
+        "x": 134,
+        "y": 677,
+        "font": "arial.ttf",
+        "font_size": 20,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/female_surnames.txt"
+      },
+      {
+        "text": "Карина",
+        "x": 299,
+        "y": 674,
+        "font": "arial.ttf",
+        "font_size": 20,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/female_names.txt"
+      },
+      {
+        "text": "женский",
+        "x": 158,
+        "y": 753,
+        "font": "arial.ttf",
+        "font_size": 20,
+        "bold": false,
+        "italic": false
+      },
+      {
+        "text": "Георгиевна",
+        "x": 480,
+        "y": 673,
+        "font": "arial.ttf",
+        "font_size": 20,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/female_lastnames.txt"
+      },
+      {
+        "text": "02.08.2014",
+        "x": 646,
+        "y": 751,
+        "font": "arial.ttf",
+        "font_size": 20,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/number_date.txt"
+      },
+      {
+        "text": "г. Москва",
+        "x": 306,
+        "y": 851,
+        "font": "arial.ttf",
+        "font_size": 20,
+        "bold": false,
+        "italic": false
+      },
+      {
+        "text": "ИФНС по Московской области",
+        "x": 413,
+        "y": 1020,
+        "font": "arial.ttf",
+        "font_size": 20,
+        "bold": false,
+        "italic": false
+      },
+      {
+        "text": "7  7  2  4  5  6  7  8  9  0  1  2",
+        "x": 1015,
+        "y": 1023,
+        "font": "arial.ttf",
+        "font_size": 20,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/inn/inn_ind.txt"
+      }
+    ]
   }
 }

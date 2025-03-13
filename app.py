@@ -303,10 +303,10 @@ class TemplateEditor:
                 font = ImageFont.truetype(font_path, font_size)
                 if bold:
                     font = ImageFont.truetype(font_path, font_size, encoding="unic",
-                                              layout_engine=ImageFont.LAYOUT_BASIC)
+                                             )
                 if italic:
                     font = ImageFont.truetype(font_path, font_size, encoding="unic",
-                                              layout_engine=ImageFont.LAYOUT_BASIC)
+                                              )
             except IOError:
                 font = ImageFont.load_default()
 
