@@ -90,6 +90,14 @@ class TemplateEditor:
         ttk.Button(btn_frame, text="Сохранить", command=self.save_config).pack(side="left", padx=5)
         ttk.Button(btn_frame, text="Сгенерировать", command=self.generate_document).pack(side="left", padx=5)
 
+        # Поле для выбора количества изображений
+        self.num_images_var = tk.IntVar(value=1)  # По умолчанию 1 изображение
+        ttk.Label(left_panel, text="Количество изображений:").pack(pady=5)
+        ttk.Spinbox(left_panel, from_=1, to=100, textvariable=self.num_images_var).pack(pady=5)
+
+        # Кнопка для генерации нескольких изображений
+        ttk.Button(left_panel, text="Генерировать изображения", command=self.generate_multiple_images).pack(pady=10)
+
         # Центральная панель - холст с прокруткой
         center_panel = ttk.Frame(main_paned)
         main_paned.add(center_panel, weight=1)
@@ -142,9 +150,7 @@ class TemplateEditor:
         # Элементы управления свойствами
         self.create_properties_controls()
 
-
         self.canvas.bind("<MouseWheel>", self.on_mousewheel)
-
         self.canvas.bind("<Shift-MouseWheel>", self.on_shift_mousewheel)
 
     def on_mousewheel(self, event):
@@ -202,6 +208,12 @@ class TemplateEditor:
 
         ttk.Button(self.properties_inner_frame, text="Применить", command=self.apply_properties).pack(pady=5)
 
+        ttk.Button(
+            self.properties_inner_frame,
+            text="Обновить все поля",
+            command=self.update_all_fields
+        ).pack(pady=5)
+
     def load_random_text(self):
         """Загружает случайный текст из выбранного файла."""
         if not self.selected_field:
@@ -227,9 +239,89 @@ class TemplateEditor:
             random_text = random.choice(lines)
 
             self.prop_vars["text"].set(random_text)
-            self.apply_properties()  # Применяем изменения
+            self.selected_field["config"]["file_path"] = file_path
+            self.apply_properties()
         except Exception as e:
             messagebox.showerror("Ошибка", f"Не удалось загрузить файл: {str(e)}")
+
+    def update_all_fields(self):
+        """Обновляет все поля с привязанными файлами."""
+        for field in self.field_objects:
+            if "file_path" in field["config"]:
+                file_path = field["config"]["file_path"]
+                try:
+                    with open(file_path, "r", encoding="utf-8") as file:
+                        lines = [line.strip() for line in file.readlines() if line.strip()]
+
+                    if not lines:
+                        continue  # Пропускаем пустые файлы
+
+                    random_text = random.choice(lines)
+                    field["config"]["text"] = random_text
+                except Exception as e:
+                    print(f"Ошибка при обновлении поля: {str(e)}")
+
+        self.draw_fields()
+        messagebox.showinfo("Успех", "Все поля обновлены!")
+
+    def generate_multiple_images(self):
+        """Генерирует несколько изображений с обновленными полями."""
+        num_images = self.num_images_var.get()  # Получаем количество изображений
+
+        # Создаем папку output, если она не существует
+        if not os.path.exists("output"):
+            os.makedirs("output")
+
+        for i in range(1, num_images + 1):
+            # Обновляем все поля
+            self.update_all_fields()
+
+            # Генерируем изображение
+            output_path = os.path.join("output", f"{i}.jpg")
+            self.generate_document_to_path(output_path)
+
+        messagebox.showinfo("Готово", f"Сгенерировано {num_images} изображений в папке output!")
+
+    def generate_document_to_path(self, output_path):
+        """ Генерирует документ и сохраняет его по указанному пути. """
+        if not self.current_template:
+            messagebox.showerror("Ошибка", "Шаблон не выбран!")
+            return
+
+        # Создаем копию изображения шаблона
+        image = self.original_image.copy()
+        draw = ImageDraw.Draw(image)
+
+        for field in self.config[self.current_template]["fields"]:
+            text = field.get("text", "Текст")
+            font_path = os.path.join("fonts", field.get("font", "arial.ttf"))
+            font_size = field.get("font_size", 14) + 4  # Увеличиваем размер шрифта на 4
+            bold = field.get("bold", False)
+            italic = field.get("italic", False)
+
+            try:
+                font = ImageFont.truetype(font_path, font_size)
+                if bold:
+                    font = ImageFont.truetype(font_path, font_size, encoding="unic",
+                                              layout_engine=ImageFont.LAYOUT_BASIC)
+                if italic:
+                    font = ImageFont.truetype(font_path, font_size, encoding="unic",
+                                              layout_engine=ImageFont.LAYOUT_BASIC)
+            except IOError:
+                font = ImageFont.load_default()
+
+            draw.text(
+                (field["x"], field["y"]),
+                text,
+                font=font,
+                fill="black",
+                anchor="mm"  # Центрируем текст относительно координат
+            )
+
+        image.save(output_path)
+        messagebox.showinfo("Готово", f"Документ сохранен: {output_path}")
+
+        self.draw_fields()
 
     def apply_properties(self):
         """Применяет изменения свойств выбранного поля."""
@@ -402,12 +494,11 @@ class TemplateEditor:
         for field in self.config[self.current_template]["fields"]:
             text = field.get("text", "Текст")
             font_path = os.path.join("fonts", field.get("font", "arial.ttf"))
-            font_size = field.get("font_size", 14)
+            font_size = field.get("font_size", 14) + 4  # Увеличиваем размер шрифта на 4
             bold = field.get("bold", False)
             italic = field.get("italic", False)
 
             try:
-                # Загружаем шрифт с учетом стиля
                 font = ImageFont.truetype(font_path, font_size)
                 if bold:
                     font = ImageFont.truetype(font_path, font_size, encoding="unic",
@@ -416,14 +507,14 @@ class TemplateEditor:
                     font = ImageFont.truetype(font_path, font_size, encoding="unic",
                                               layout_engine=ImageFont.LAYOUT_BASIC)
             except IOError:
-                # Если шрифт не найден, используем стандартный
                 font = ImageFont.load_default()
 
             draw.text(
-                (field["x"], field["y"]),  # Координаты текста
+                (field["x"], field["y"]),
                 text,
                 font=font,
-                fill="black"
+                fill="black",
+                anchor="mm"  # Центрируем текст относительно координат
             )
 
         image.save(output_path)

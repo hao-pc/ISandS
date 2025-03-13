@@ -29,58 +29,63 @@
     "image_path": "templates/inn.jpg",
     "fields": [
       {
-        "text": "7  7  2  2  0  1  0  0  2  0",
+        "text": "7  7  0  7  0  1  0  0  7  0",
         "x": 256,
         "y": 658,
         "font": "arial.ttf",
         "font_size": 14,
         "bold": false,
-        "italic": false
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/inn/inn_legal.txt"
       },
       {
-        "text": "\"Светлый Путь\"",
-        "x": 507,
+        "text": "\"Жемчужный Туман\"",
+        "x": 520,
         "y": 280,
         "font": "arial.ttf",
         "font_size": 12,
         "bold": false,
-        "italic": false
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/inn/company.txt"
       },
       {
-        "text": "7  7  4  5  0  1  0  0  5",
+        "text": "7  7  3  1  0  1  0  0  1",
         "x": 476,
         "y": 659,
         "font": "arial.ttf",
         "font_size": 14,
         "bold": false,
-        "italic": false
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/inn/kpp.txt"
       },
       {
         "text": "7  7  0  4",
         "x": 576,
-        "y": 534,
+        "y": 533,
         "font": "arial.ttf",
         "font_size": 14,
         "bold": false,
         "italic": false
       },
       {
-        "text": "1  1  2  4  7  7  3  4  5  6  7  8  9",
+        "text": "1  1  1  1  7  7  0  9  8  7  6  5  4",
         "x": 272,
         "y": 441,
         "font": "arial.ttf",
         "font_size": 14,
         "bold": false,
-        "italic": false
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/inn/ogrn.txt"
       },
       {
-        "text": "25.08.2007",
+        "text": "01.02.2015",
         "x": 390,
         "y": 488,
         "font": "arial.ttf",
         "font_size": 14,
         "bold": false,
-        "italic": false
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/number_date.txt"
       }
     ]
   },
