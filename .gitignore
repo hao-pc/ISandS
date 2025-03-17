@@ -6,3 +6,4 @@
 /pdf/*
 /jpg/*
 .idea/*
+__pycache__/*

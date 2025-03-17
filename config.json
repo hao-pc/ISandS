@@ -265,27 +265,31 @@
       },
       {
         "text": "Андреевна",
-        "x": 393,
-        "y": 585,
+        "x": 405,
+        "y": 584,
         "font": "arial.ttf",
         "font_size": 14,
         "bold": true,
         "italic": true,
         "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/certificate/female_lastnames.txt"
       }
-    ]
+    ],
+    "images": []
   },
   "death": {
     "image_path": "templates/death.jpg",
-    "fields": []
+    "fields": [],
+    "images": []
   },
   "divorce": {
     "image_path": "templates/divorce.jpg",
-    "fields": []
+    "fields": [],
+    "images": []
   },
   "marriage": {
     "image_path": "templates/marriage.jpg",
-    "fields": []
+    "fields": [],
+    "images": []
   },
   "inn": {
     "image_path": "templates/inn.jpg",
@@ -349,23 +353,26 @@
         "italic": false,
         "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/number_date.txt"
       }
-    ]
+    ],
+    "images": []
   },
   "inn_2004": {
     "image_path": "templates/inn_2004.jpg",
-    "fields": []
+    "fields": [],
+    "images": []
   },
   "inn_2004_2": {
     "image_path": "templates/inn_2004_2.jpg",
-    "fields": []
+    "fields": [],
+    "images": []
   },
   "inn_esp": {
     "image_path": "templates/inn_esp.jpg",
     "fields": [
       {
         "text": "Андреева",
-        "x": 134,
-        "y": 677,
+        "x": 135,
+        "y": 681,
         "font": "arial.ttf",
         "font_size": 20,
         "bold": false,
@@ -374,8 +381,8 @@
       },
       {
         "text": "Карина",
-        "x": 299,
-        "y": 674,
+        "x": 295,
+        "y": 681,
         "font": "arial.ttf",
         "font_size": 20,
         "bold": false,
@@ -393,8 +400,8 @@
       },
       {
         "text": "Георгиевна",
-        "x": 480,
-        "y": 673,
+        "x": 471,
+        "y": 681,
         "font": "arial.ttf",
         "font_size": 20,
         "bold": false,
@@ -438,6 +445,58 @@
         "bold": false,
         "italic": false,
         "file_path": "C:/Users/khristoforova/PycharmProjects/ISandS/random/inn/inn_ind.txt"
+      }
+    ],
+    "images": []
+  },
+  "inn_esp_2": {
+    "image_path": "templates/inn_esp_2.jpg",
+    "fields": [
+      {
+        "text": "Воробьев",
+        "x": 70,
+        "y": 260,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/male_surnames.txt"
+      },
+      {
+        "text": "Денис",
+        "x": 191,
+        "y": 260,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/male_names.txt"
+      },
+      {
+        "text": "Ильич",
+        "x": 323,
+        "y": 260,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/male_lastnames.txt"
+      }
+    ],
+    "images": [
+      {
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/stamp/3.png",
+        "x": 100,
+        "y": 100,
+        "width": 100,
+        "height": 100
+      },
+      {
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/signatures/pngwing.com (9).png",
+        "x": 100,
+        "y": 100,
+        "width": 100,
+        "height": 100
       }
     ]
   }
