@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import filedialog, messagebox
+from tkinter import filedialog, messagebox, simpledialog
 import requests
 import base64
 
@@ -11,12 +11,17 @@ def upload_file():
     if not file_path:
         return
 
+    component_name = simpledialog.askstring("Ввод", "Введите название компонента:")
+    if not component_name:
+        messagebox.showerror("Ошибка", "Название компонента не введено!")
+        return
+
     with open(file_path, "rb") as file:
         encoded_file = base64.b64encode(file.read()).decode('utf-8')
 
     url = "http://127.0.0.1:8000/evaluate/"
     payload = {
-        "component_name": "example_component"
+        "component_name": component_name
     }
     files = {
         "file": ("file", encoded_file)
@@ -28,6 +33,7 @@ def upload_file():
         result = response.json()
         # print(result)
         result_text = (
+            f"Label: {result['label']}\n"
             f"Signature: {result['signature']}\n"
             f"Stamp: {result['stamp']}\n"
             f"ESP: {result['esp']}"

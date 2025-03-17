@@ -408,21 +408,35 @@ class TemplateEditor:
 
     def generate_multiple_images(self):
         """Генерирует несколько изображений с обновленными полями."""
-        num_images = self.num_images_var.get()  # Получаем количество изображений
+        num_images = self.num_images_var.get()
 
-        # Создаем папку output, если она не существует
         if not os.path.exists("output"):
             os.makedirs("output")
 
-        for i in range(1, num_images + 1):
-            # Обновляем все поля
+        template_folder = os.path.join("output", self.current_template)
+        if not os.path.exists(template_folder):
+            os.makedirs(template_folder)
+
+        existing_files = os.listdir(template_folder)
+        existing_numbers = []
+
+        for file_name in existing_files:
+            if file_name.startswith(f"{self.current_template}_") and file_name.endswith(".jpg"):
+                try:
+                    number = int(file_name.split("_")[-1].split(".")[0])
+                    existing_numbers.append(number)
+                except ValueError:
+                    continue
+
+        start_number = max(existing_numbers) + 1 if existing_numbers else 1
+
+        for i in range(start_number, start_number + num_images):
             self.update_all_fields()
 
-            # Генерируем изображение
-            output_path = os.path.join("output", f"{i}.jpg")
+            output_path = os.path.join(template_folder, f"{self.current_template}_{i}.jpg")
             self.generate_document_to_path(output_path)
 
-        messagebox.showinfo("Готово", f"Сгенерировано {num_images} изображений в папке output!")
+        messagebox.showinfo("Готово", f"Сгенерировано {num_images} изображений в папке {template_folder}!")
 
     def generate_document_to_path(self, output_path):
         """Генерирует документ и сохраняет его по указанному пути."""
