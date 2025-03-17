@@ -248,41 +248,60 @@ class TemplateEditor:
 
     def start_image_drag(self, event):
         """Начинает перетаскивание изображения."""
-        self.dragging = self.canvas.find_closest(event.x, event.y)[0]
+        x = self.canvas.canvasx(event.x)
+        y = self.canvas.canvasy(event.y)
+
+        self.dragging = self.canvas.find_closest(x, y)[0]
 
     def on_image_drag(self, event):
         """Обрабатывает перетаскивание изображения."""
         if self.dragging:
-            self.canvas.coords(self.dragging, event.x, event.y)
-            # Обновляем координаты изображения
+            x = self.canvas.canvasx(event.x)
+            y = self.canvas.canvasy(event.y)
+
+            self.canvas.coords(self.dragging, x, y)
+
             for img in self.image_objects:
                 if img["id"] == self.dragging:
-                    img["x"] = event.x
-                    img["y"] = event.y
+                    img["x"] = x
+                    img["y"] = y
                     break
 
     def end_image_drag(self, event):
         """Завершает перетаскивание изображения."""
-        self.dragging = None
+        if self.dragging:
+            x = self.canvas.canvasx(event.x)
+            y = self.canvas.canvasy(event.y)
+
+            for img in self.image_objects:
+                if img["id"] == self.dragging:
+                    img["x"] = x
+                    img["y"] = y
+                    break
+
+            self.dragging = None
 
     def start_image_resize(self, event):
         """Начинает масштабирование изображения."""
-        self.resizing = self.canvas.find_closest(event.x, event.y)[0]
-        self.resize_start_x = event.x
-        self.resize_start_y = event.y
+        x = self.canvas.canvasx(event.x)
+        y = self.canvas.canvasy(event.y)
+
+        self.resizing = self.canvas.find_closest(x, y)[0]
+
+        self.resize_start_x = x
+        self.resize_start_y = y
 
     def on_image_resize(self, event):
         """Обрабатывает масштабирование изображения."""
         if self.resizing:
-            # Вычисляем изменение размера
-            delta_x = event.x - self.resize_start_x
-            delta_y = event.y - self.resize_start_y
+            x = self.canvas.canvasx(event.x)
+            y = self.canvas.canvasy(event.y)
 
-            # Находим изображение в списке
+            delta_x = x - self.resize_start_x
+            delta_y = y - self.resize_start_y
+
             for img in self.image_objects:
                 if img["id"] == self.resizing:
-                    # Новый размер изображения
-
                     new_width = img["width"] + delta_x
                     new_height = img["height"] + delta_y
 
@@ -290,24 +309,34 @@ class TemplateEditor:
                     new_width = max(new_width, min_size)
                     new_height = max(new_height, min_size)
 
-                    # Масштабируем изображение
+                    new_width = int(new_width)
+                    new_height = int(new_height)
+
                     resized_image = img["original_image"].resize((new_width, new_height))
                     photo_image = ImageTk.PhotoImage(resized_image)
 
-                    # Обновляем изображение на холсте
                     self.canvas.itemconfig(img["id"], image=photo_image)
                     img["image"] = photo_image
                     img["width"] = new_width
                     img["height"] = new_height
 
-                    # Обновляем начальные координаты для следующего шага
-                    self.resize_start_x = event.x
-                    self.resize_start_y = event.y
+                    self.resize_start_x = x
+                    self.resize_start_y = y
                     break
 
     def end_image_resize(self, event):
         """Завершает масштабирование изображения."""
-        self.resizing = None
+        if self.resizing:
+            x = self.canvas.canvasx(event.x)
+            y = self.canvas.canvasy(event.y)
+
+            for img in self.image_objects:
+                if img["id"] == self.resizing:
+                    img["x"] = x
+                    img["y"] = y
+                    break
+
+            self.resizing = None
 
     def create_properties_controls(self):
         self.prop_vars = {}
@@ -451,11 +480,14 @@ class TemplateEditor:
         # Отрисовываем изображения (в первую очередь)
         for img in self.image_objects:
             img_data = img["original_image"].resize((img["width"], img["height"]))
+
+            x = int(img["x"])
+            y = int(img["y"])
             # Если изображение имеет прозрачность, используем маску
             if img_data.mode == "RGBA":
-                image.paste(img_data, (img["x"], img["y"]), img_data)
+                image.paste(img_data, (x, y), img_data)
             else:
-                image.paste(img_data, (img["x"], img["y"]))
+                image.paste(img_data, (x, y))
 
         # Отрисовываем текстовые поля (после изображений)
         for field in self.config[self.current_template]["fields"]:
@@ -476,8 +508,11 @@ class TemplateEditor:
             except IOError:
                 font = ImageFont.load_default()
 
+            x = int(field["x"])
+            y = int(field["y"])
+
             draw.text(
-                (field["x"], field["y"]),
+                (x, y),
                 text,
                 font=font,
                 fill="black",
@@ -689,8 +724,6 @@ class TemplateEditor:
 
         self.field_objects = [f for f in self.field_objects if f["id"] != self.selected_field["id"]]
 
-        self.save_config()
-
         self.canvas.delete(self.selected_field["id"])
 
         self.selected_field = None
@@ -760,29 +793,35 @@ class TemplateEditor:
         self.draw_fields()
 
     def start_drag(self, event):
-        """Начинает перетаскивание."""
-        self.dragging = self.canvas.find_closest(event.x, event.y)[0]
+        """Начинает перетаскивание текстового поля."""
+        x = self.canvas.canvasx(event.x)
+        y = self.canvas.canvasy(event.y)
 
-        # Ищем поле по идентификатору
-        try:
-            self.selected_field = next(f for f in self.field_objects if f["id"] == self.dragging)
-        except StopIteration:
-            # Если поле не найдено, сбрасываем состояние
-            self.selected_field = None
-            self.dragging = None
-            return
+        self.dragging = self.canvas.find_closest(x, y)[0]
 
-        self.update_properties_controls()
+        for field in self.field_objects:
+            if field["id"] == self.dragging:
+                self.selected_field = field
+                self.update_properties_controls()
+                break
+
     def on_drag(self, event):
-        """Обрабатывает перетаскивание."""
+        """Обрабатывает перетаскивание текстового поля."""
         if self.dragging and self.selected_field:
-            self.canvas.coords(self.dragging, event.x, event.y)
+            x = self.canvas.canvasx(event.x)
+            y = self.canvas.canvasy(event.y)
+
+            self.canvas.coords(self.dragging, x, y)
 
     def end_drag(self, event):
-        """Завершает перетаскивание."""
+        """Завершает перетаскивание текстового поля."""
         if self.dragging and self.selected_field:
-            self.selected_field["config"]["x"] = event.x
-            self.selected_field["config"]["y"] = event.y
+            x = self.canvas.canvasx(event.x)
+            y = self.canvas.canvasy(event.y)
+
+            self.selected_field["config"]["x"] = x
+            self.selected_field["config"]["y"] = y
+
             self.dragging = None
 
     def update_properties_controls(self):
