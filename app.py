@@ -7,6 +7,7 @@ import pandas
 from io import BytesIO
 from PIL import Image
 import uvicorn
+from starlette.responses import JSONResponse
 from ultralytics import YOLO
 import pytesseract
 from pdf2image import convert_from_path
@@ -53,12 +54,12 @@ async def evaluate(file: UploadFile = File(...), component_name: str = Form(...)
 
     print(contains_component)
 
-    return {
+    return JSONResponse({
         "label": contains_component,
         "signature": signature,
         "stamp": stamp,
         "esp": esp
-    }
+    })
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
