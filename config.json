@@ -283,8 +283,347 @@
   },
   "divorce": {
     "image_path": "templates/divorce.jpg",
-    "fields": [],
-    "images": []
+    "fields": [
+      {
+        "text": "Королев",
+        "x": 452,
+        "y": 156,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/male_surnames.txt"
+      },
+      {
+        "text": "Василий",
+        "x": 378,
+        "y": 184,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/male_names.txt"
+      },
+      {
+        "text": "гражданином Росcии, русским",
+        "x": 426.0,
+        "y": 208.0,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false
+      },
+      {
+        "text": "5",
+        "x": 199,
+        "y": 232,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/act_date.txt"
+      },
+      {
+        "text": "февраля",
+        "x": 337,
+        "y": 234,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/act_month.txt"
+      },
+      {
+        "text": "2036",
+        "x": 467.0,
+        "y": 232.0,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/act_year.txt"
+      },
+      {
+        "text": "г. Казань",
+        "x": 438,
+        "y": 255,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false
+      },
+      {
+        "text": "Дмитриева",
+        "x": 440,
+        "y": 281,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/female_surnames.txt"
+      },
+      {
+        "text": "Лилия",
+        "x": 376,
+        "y": 304,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/female_names.txt"
+      },
+      {
+        "text": "Романовна",
+        "x": 493,
+        "y": 305,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/female_lastnames.txt"
+      },
+      {
+        "text": "гражданкой России, русской",
+        "x": 434,
+        "y": 331,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false
+      },
+      {
+        "text": "16",
+        "x": 195.0,
+        "y": 351.0,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/act_date.txt"
+      },
+      {
+        "text": "марта",
+        "x": 320,
+        "y": 352,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/act_month.txt"
+      },
+      {
+        "text": "2018",
+        "x": 438,
+        "y": 352,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/act_year.txt"
+      },
+      {
+        "text": "г. Москва",
+        "x": 435,
+        "y": 375,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false
+      },
+      {
+        "text": "26.05.2017",
+        "x": 428,
+        "y": 400,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/number_date.txt"
+      },
+      {
+        "text": "двадцать второго февраля",
+        "x": 421,
+        "y": 425,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/letter_date.txt"
+      },
+      {
+        "text": "две тысячи двадцать седьмого года",
+        "x": 422,
+        "y": 447,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/letter_year.txt"
+      },
+      {
+        "text": "14",
+        "x": 214,
+        "y": 519,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/act_date.txt"
+      },
+      {
+        "text": "августа",
+        "x": 342,
+        "y": 517,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/act_month.txt"
+      },
+      {
+        "text": "2005",
+        "x": 458.0,
+        "y": 518.0,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/act_year.txt"
+      },
+      {
+        "text": "2009",
+        "x": 277,
+        "y": 544,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/act_year.txt"
+      },
+      {
+        "text": "октября",
+        "x": 452,
+        "y": 544,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/act_month.txt"
+      },
+      {
+        "text": "22",
+        "x": 630,
+        "y": 544,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/act_date.txt"
+      },
+      {
+        "text": "443",
+        "x": 526.0,
+        "y": 566.0,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false
+      },
+      {
+        "text": "Алексеева",
+        "x": 279,
+        "y": 616,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/female_surnames.txt"
+      },
+      {
+        "text": "отдел ЗАГС г. Москва",
+        "x": 518.0,
+        "y": 637.0,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false
+      },
+      {
+        "text": "30",
+        "x": 393.0,
+        "y": 766.0,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/act_date.txt"
+      },
+      {
+        "text": "октября",
+        "x": 519,
+        "y": 768,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/act_month.txt"
+      },
+      {
+        "text": "2017",
+        "x": 671.0,
+        "y": 767.0,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/act_year.txt"
+      },
+      {
+        "text": "Ярославович",
+        "x": 506,
+        "y": 183,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/male_lastnames.txt"
+      },
+      {
+        "text": "решения о расторжении брака мирового судьи",
+        "x": 480.0,
+        "y": 473.0,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false
+      },
+      {
+        "text": "Семенов",
+        "x": 696.0,
+        "y": 811.0,
+        "font": "arial.ttf",
+        "font_size": 14,
+        "bold": false,
+        "italic": false,
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/random/certificate/male_surnames.txt"
+      }
+    ],
+    "images": [
+      {
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/stamp/3.png",
+        "x": 100,
+        "y": 100,
+        "width": 100,
+        "height": 100
+      },
+      {
+        "file_path": "C:/Users/artas/PycharmProjects/ISandS/signatures/pngwing.com (16).png",
+        "x": 100,
+        "y": 100,
+        "width": 100,
+        "height": 100
+      }
+    ]
   },
   "marriage": {
     "image_path": "templates/marriage.jpg",
