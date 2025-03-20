@@ -7,4 +7,7 @@
 /jpg/*
 .idea/*
 __pycache__/*
-/trainocr/all_data/*
+/trainocr/all_data/ru_train_filtered/*
+trainocr/.ipynb_checkpoints/
+trainocr/__pycache__/
+dataframes.py

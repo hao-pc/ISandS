@@ -5,7 +5,7 @@ experiment_name: 'ru_train_filtered'
 train_data: 'all_data'
 valid_data: 'all_data'
 manualSeed: 1111
-workers: 2
+workers: 0
 batch_size: 32 #32
 num_iter: 30000
 valInterval: 2000
