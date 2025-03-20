@@ -7,3 +7,4 @@
 /jpg/*
 .idea/*
 __pycache__/*
+/trainocr/all_data/*
