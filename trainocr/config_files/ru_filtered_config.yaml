@@ -1,6 +1,6 @@
 number: '0123456789'
-symbol: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ €"
-lang_char: 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+symbol: "!#$%&'()*+,-./:;<=>?@\_`{|}~€§±©®™°²³·×÷¬¶¿¡¢£¤¥¦¨«»‐‑‒–—―‖‘’‚‛“”„‟†‡•…‰′″∅∆∇∈∉∋"
+lang_char: 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюяABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 experiment_name: 'ru_train_filtered'
 train_data: 'all_data'
 valid_data: 'all_data'
@@ -9,10 +9,10 @@ workers: 0
 batch_size: 32 #32
 num_iter: 30000
 valInterval: 2000
-saved_model: '' #'saved_models/en_filtered/iter_300000.pth'
-FT: False
+saved_model: 'saved_models/ru_train_filtered/cyrillic_g2.pth' #'saved_models/en_filtered/iter_300000.pth'
+FT: True
 optim: False # default is Adadelta
-lr: 1.0
+lr: 0.01
 beta1: 0.9
 rho: 0.95
 eps: 0.00000001
