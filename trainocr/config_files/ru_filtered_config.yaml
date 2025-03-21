@@ -1,16 +1,16 @@
 number: '0123456789'
-symbol: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ €"
-lang_char: 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+symbol: '!"#$№%&\()*+-./:;<=>?@[\\]^_`{|}~ «»₽'
+lang_char: '₽ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюяЂђЃѓЄєІіЇїЈјЉљЊњЋћЌќЎўЏџҐґҒғҚқҮүҲҳҶҷӀӏӢӣӨ'
 experiment_name: 'ru_train_filtered'
 train_data: 'all_data'
 valid_data: 'all_data'
 manualSeed: 1111
 workers: 0
-batch_size: 32 #32
-num_iter: 30000
-valInterval: 2000
-saved_model: '' #'saved_models/en_filtered/iter_300000.pth'
-FT: False
+batch_size: 64 #32
+num_iter: 50000
+valInterval: 5000
+saved_model: 'saved_models/ru_filtered/cyrillic_g2.pth' #'saved_models/en_filtered/iter_300000.pth'
+FT: True
 optim: False # default is Adadelta
 lr: 1.0
 beta1: 0.9
@@ -21,14 +21,14 @@ grad_clip: 5
 select_data: 'ru_train_filtered' # this is dataset folder in train_data
 batch_ratio: '1' 
 total_data_usage_ratio: 1.0
-batch_max_length: 100
+batch_max_length: 150
 imgH: 64
 imgW: 600
 rgb: False
 contrast_adjust: False
 sensitive: True
 PAD: True
-data_filtering_off: True
+data_filtering_off: False
 # Model Architecture
 Transformation: 'None'
 FeatureExtraction: 'VGG'
