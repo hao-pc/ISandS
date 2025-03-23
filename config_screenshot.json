@@ -1,0 +1,25 @@
+{
+  "birth": {
+    "image_path": "C:/Users/artas/OneDrive/Рабочий стол/dataset/print/print/print/images/train\\birth_1.jpg",
+    "regions": [
+      {
+        "x1": 224.0,
+        "y1": 109.0,
+        "x2": 453.0,
+        "y2": 142.0
+      }
+    ]
+  },
+  "divorce": {
+    "image_path": "C:/Users/artas/OneDrive/Рабочий стол/dataset/print/print/print/images/train\\divorce_1.jpg",
+    "regions": []
+  },
+  "inn": {
+    "image_path": "C:/Users/artas/OneDrive/Рабочий стол/dataset/print/print/print/images/train\\inn_1.jpg",
+    "regions": []
+  },
+  "pass": {
+    "image_path": "C:/Users/artas/OneDrive/Рабочий стол/dataset/print/print/print/images/train\\pass_1.jpg",
+    "regions": []
+  }
+}
