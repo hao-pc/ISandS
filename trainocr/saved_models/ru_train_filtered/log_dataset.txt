@@ -932,3 +932,268 @@ Total_batch_size: 64 = 64
 dataset_root:    all_data	 dataset: /
 sub-directory:	/ru_train_filtered	 num samples: 201
 --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered	 num samples: 201
+num total samples of ru_train_filtered: 201 x 1.0 (total_data_usage_ratio) = 201
+num samples of ru_train_filtered per batch: 64 x 1.0 (batch_ratio) = 64
+--------------------------------------------------------------------------------
+Total_batch_size: 64 = 64
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: /
+sub-directory:	/ru_train_filtered	 num samples: 201
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered	 num samples: 201
+num total samples of ru_train_filtered: 201 x 1.0 (total_data_usage_ratio) = 201
+num samples of ru_train_filtered per batch: 64 x 1.0 (batch_ratio) = 64
+--------------------------------------------------------------------------------
+Total_batch_size: 64 = 64
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: /
+sub-directory:	/ru_train_filtered	 num samples: 201
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered\val	 num samples: 186
+num total samples of ru_train_filtered: 186 x 1.0 (total_data_usage_ratio) = 186
+num samples of ru_train_filtered per batch: 64 x 1.0 (batch_ratio) = 64
+--------------------------------------------------------------------------------
+Total_batch_size: 64 = 64
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['train']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: train
+sub-directory:	/ru_train_filtered\train	 num samples: 510
+sub-directory:	/ru_train_filtered\val	 num samples: 186
+num total samples of train: 696 x 1.0 (total_data_usage_ratio) = 696
+num samples of train per batch: 64 x 1.0 (batch_ratio) = 64
+--------------------------------------------------------------------------------
+Total_batch_size: 64 = 64
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered	 num samples: 510
+num total samples of ru_train_filtered: 510 x 1.0 (total_data_usage_ratio) = 510
+num samples of ru_train_filtered per batch: 64 x 1.0 (batch_ratio) = 64
+--------------------------------------------------------------------------------
+Total_batch_size: 64 = 64
+--------------------------------------------------------------------------------
+dataset_root:    all_data/val	 dataset: /
+sub-directory:	/.	 num samples: 186
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered	 num samples: 510
+num total samples of ru_train_filtered: 510 x 1.0 (total_data_usage_ratio) = 510
+num samples of ru_train_filtered per batch: 64 x 1.0 (batch_ratio) = 64
+--------------------------------------------------------------------------------
+Total_batch_size: 64 = 64
+--------------------------------------------------------------------------------
+dataset_root:    all_data/val	 dataset: /
+sub-directory:	/.	 num samples: 186
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered	 num samples: 510
+num total samples of ru_train_filtered: 510 x 1.0 (total_data_usage_ratio) = 510
+num samples of ru_train_filtered per batch: 64 x 1.0 (batch_ratio) = 64
+--------------------------------------------------------------------------------
+Total_batch_size: 64 = 64
+--------------------------------------------------------------------------------
+dataset_root:    all_data/val	 dataset: /
+sub-directory:	/.	 num samples: 186
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered	 num samples: 510
+num total samples of ru_train_filtered: 510 x 1.0 (total_data_usage_ratio) = 510
+num samples of ru_train_filtered per batch: 64 x 1.0 (batch_ratio) = 64
+--------------------------------------------------------------------------------
+Total_batch_size: 64 = 64
+--------------------------------------------------------------------------------
+dataset_root:    all_data/val	 dataset: /
+sub-directory:	/.	 num samples: 186
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered	 num samples: 510
+num total samples of ru_train_filtered: 510 x 1.0 (total_data_usage_ratio) = 510
+num samples of ru_train_filtered per batch: 64 x 1.0 (batch_ratio) = 64
+--------------------------------------------------------------------------------
+Total_batch_size: 64 = 64
+--------------------------------------------------------------------------------
+dataset_root:    all_data/val	 dataset: /
+sub-directory:	/.	 num samples: 186
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered	 num samples: 510
+num total samples of ru_train_filtered: 510 x 1.0 (total_data_usage_ratio) = 510
+num samples of ru_train_filtered per batch: 128 x 1.0 (batch_ratio) = 128
+--------------------------------------------------------------------------------
+Total_batch_size: 128 = 128
+--------------------------------------------------------------------------------
+dataset_root:    all_data/val	 dataset: /
+sub-directory:	/.	 num samples: 186
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered	 num samples: 510
+num total samples of ru_train_filtered: 510 x 1.0 (total_data_usage_ratio) = 510
+num samples of ru_train_filtered per batch: 128 x 1.0 (batch_ratio) = 128
+--------------------------------------------------------------------------------
+Total_batch_size: 128 = 128
+--------------------------------------------------------------------------------
+dataset_root:    all_data/val	 dataset: /
+sub-directory:	/.	 num samples: 186
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered	 num samples: 510
+num total samples of ru_train_filtered: 510 x 1.0 (total_data_usage_ratio) = 510
+num samples of ru_train_filtered per batch: 128 x 1.0 (batch_ratio) = 128
+--------------------------------------------------------------------------------
+Total_batch_size: 128 = 128
+--------------------------------------------------------------------------------
+dataset_root:    all_data/val	 dataset: /
+sub-directory:	/.	 num samples: 186
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered	 num samples: 510
+num total samples of ru_train_filtered: 510 x 1.0 (total_data_usage_ratio) = 510
+num samples of ru_train_filtered per batch: 64 x 1.0 (batch_ratio) = 64
+--------------------------------------------------------------------------------
+Total_batch_size: 64 = 64
+--------------------------------------------------------------------------------
+dataset_root:    all_data/val	 dataset: /
+sub-directory:	/.	 num samples: 186
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered	 num samples: 510
+num total samples of ru_train_filtered: 510 x 1.0 (total_data_usage_ratio) = 510
+num samples of ru_train_filtered per batch: 64 x 1.0 (batch_ratio) = 64
+--------------------------------------------------------------------------------
+Total_batch_size: 64 = 64
+--------------------------------------------------------------------------------
+dataset_root:    all_data/val	 dataset: /
+sub-directory:	/.	 num samples: 186
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered	 num samples: 510
+num total samples of ru_train_filtered: 510 x 1.0 (total_data_usage_ratio) = 510
+num samples of ru_train_filtered per batch: 64 x 1.0 (batch_ratio) = 64
+--------------------------------------------------------------------------------
+Total_batch_size: 64 = 64
+--------------------------------------------------------------------------------
+dataset_root:    all_data/val	 dataset: /
+sub-directory:	/.	 num samples: 186
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered	 num samples: 510
+num total samples of ru_train_filtered: 510 x 1.0 (total_data_usage_ratio) = 510
+num samples of ru_train_filtered per batch: 64 x 1.0 (batch_ratio) = 64
+--------------------------------------------------------------------------------
+Total_batch_size: 64 = 64
+--------------------------------------------------------------------------------
+dataset_root:    all_data/val	 dataset: /
+sub-directory:	/.	 num samples: 186
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered	 num samples: 510
+num total samples of ru_train_filtered: 510 x 1.0 (total_data_usage_ratio) = 510
+num samples of ru_train_filtered per batch: 64 x 1.0 (batch_ratio) = 64
+--------------------------------------------------------------------------------
+Total_batch_size: 64 = 64
+--------------------------------------------------------------------------------
+dataset_root:    all_data/val	 dataset: /
+sub-directory:	/.	 num samples: 186
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+dataset_root: all_data
+opt.select_data: ['ru_train_filtered']
+opt.batch_ratio: ['1']
+--------------------------------------------------------------------------------
+dataset_root:    all_data	 dataset: ru_train_filtered
+sub-directory:	/ru_train_filtered	 num samples: 510
+num total samples of ru_train_filtered: 510 x 1.0 (total_data_usage_ratio) = 510
+num samples of ru_train_filtered per batch: 64 x 1.0 (batch_ratio) = 64
+--------------------------------------------------------------------------------
+Total_batch_size: 64 = 64
+--------------------------------------------------------------------------------
+dataset_root:    all_data/val	 dataset: /
+sub-directory:	/.	 num samples: 186
+--------------------------------------------------------------------------------

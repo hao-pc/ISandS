@@ -7,10 +7,11 @@
 /jpg/*
 .idea/*
 __pycache__/*
-/trainocr/all_data/ru_train_filtered/*
+/trainocr/all_data/*
 /trainocr/.ipynb_checkpoints/
 /trainocr/__pycache__/*
 dataframes.py
 /trainocr/modules/__pycache__/*
 /trainocr/saved_models/ru_train_filtered/
 /trainocr/saved_models/ru_filtered/
+/trainocr/user_network/__pycache__/

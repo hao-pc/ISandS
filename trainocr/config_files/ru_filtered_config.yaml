@@ -3,13 +3,13 @@ symbol: '!"#$№%&\()*+-./:;<=>?@[\\]^_`{|}~ «»₽'
 lang_char: '₽ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюяЂђЃѓЄєІіЇїЈјЉљЊњЋћЌќЎўЏџҐґҒғҚқҮүҲҳҶҷӀӏӢӣӨ'
 experiment_name: 'ru_train_filtered'
 train_data: 'all_data'
-valid_data: 'all_data'
+valid_data: 'all_data/val'
 manualSeed: 1111
 workers: 0
 batch_size: 64 #32
-num_iter: 50000
-valInterval: 5000
-saved_model: 'saved_models/ru_filtered/cyrillic_g2.pth' #'saved_models/en_filtered/iter_300000.pth'
+num_iter: 5000
+valInterval: 1000
+saved_model: 'saved_models/ru_train_filtered/best_accuracy.pth' #'saved_models/en_filtered/iter_300000.pth'
 FT: True
 optim: False # default is Adadelta
 lr: 1.0
@@ -25,7 +25,7 @@ batch_max_length: 150
 imgH: 64
 imgW: 600
 rgb: False
-contrast_adjust: False
+contrast_adjust: True
 sensitive: True
 PAD: True
 data_filtering_off: False

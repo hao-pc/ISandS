@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 
 # Image path
-Image_path = '../1.jpg'
+Image_path = '../inn_esp_2_1.jpg'
 # Initialize EasyOCR reader (Russian language, CPU)
 reader = easyocr.Reader(lang_list=['ru', 'en'],
                         model_storage_directory='model',
@@ -13,7 +13,7 @@ reader = easyocr.Reader(lang_list=['ru', 'en'],
                         )
 
 # Perform text detection on the image
-result = reader.readtext(Image_path, allowlist='0123456789-.АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя')
+result = reader.readtext(Image_path, allowlist='0123456789-.()№ АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюяI')
 
 # Load image using OpenCV
 image = cv2.imread(Image_path)

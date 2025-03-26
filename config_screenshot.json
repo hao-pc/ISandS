@@ -1,14 +1,7 @@
 {
   "birth": {
     "image_path": "C:/Users/artas/OneDrive/Рабочий стол/dataset/print/print/print/images/train\\birth_1.jpg",
-    "regions": [
-      {
-        "x1": 224.0,
-        "y1": 109.0,
-        "x2": 453.0,
-        "y2": 142.0
-      }
-    ]
+    "regions": []
   },
   "divorce": {
     "image_path": "C:/Users/artas/OneDrive/Рабочий стол/dataset/print/print/print/images/train\\divorce_1.jpg",
@@ -16,6 +9,127 @@
   },
   "inn": {
     "image_path": "C:/Users/artas/OneDrive/Рабочий стол/dataset/print/print/print/images/train\\inn_1.jpg",
+    "regions": []
+  },
+  "inn_2004": {
+    "image_path": "C:/Users/artas/OneDrive/Рабочий стол/dataset/print/print/print/images/train\\inn_2004_1.jpg",
+    "regions": [
+      {
+        "x1": 1274.0,
+        "y1": 1276.0,
+        "x2": 714.0,
+        "y2": 1329.0
+      },
+      {
+        "x1": 670.0,
+        "y1": 691.0,
+        "x2": 477.0,
+        "y2": 726.0
+      },
+      {
+        "x1": 764.0,
+        "y1": 1376.0,
+        "x2": 593.0,
+        "y2": 1405.0
+      },
+      {
+        "x1": 593.0,
+        "y1": 838.0,
+        "x2": 432.0,
+        "y2": 874.0
+      },
+      {
+        "x1": 827.0,
+        "y1": 681.0,
+        "x2": 686.0,
+        "y2": 726.0
+      },
+      {
+        "x1": 1053.0,
+        "y1": 685.0,
+        "x2": 836.0,
+        "y2": 724.0
+      },
+      {
+        "x1": 1075.0,
+        "y1": 1036.0,
+        "x2": 913.0,
+        "y2": 1063.0
+      }
+    ]
+  },
+  "inn_2004_2": {
+    "image_path": "C:/Users/artas/OneDrive/Рабочий стол/dataset/print/print/print/images/train\\inn_2004_2_1.jpg",
+    "regions": [
+      {
+        "x1": 710.0,
+        "y1": 704.0,
+        "x2": 936.0,
+        "y2": 740.0
+      },
+      {
+        "x1": 148.0,
+        "y1": 1032.0,
+        "x2": 241.0,
+        "y2": 1061.0
+      },
+      {
+        "x1": 493.0,
+        "y1": 1028.0,
+        "x2": 286.0,
+        "y2": 1062.0
+      },
+      {
+        "x1": 524.0,
+        "y1": 1030.0,
+        "x2": 619.0,
+        "y2": 1060.0
+      },
+      {
+        "x1": 1060.0,
+        "y1": 1149.0,
+        "x2": 432.0,
+        "y2": 1186.0
+      }
+    ]
+  },
+  "inn_esp": {
+    "image_path": "C:/Users/artas/OneDrive/Рабочий стол/dataset/print/print/print/images/train\\inn_esp_1.jpg",
+    "regions": [
+      {
+        "x1": 86.0,
+        "y1": 665.0,
+        "x2": 198.0,
+        "y2": 695.0
+      },
+      {
+        "x1": 211.0,
+        "y1": 663.0,
+        "x2": 348.0,
+        "y2": 691.0
+      },
+      {
+        "x1": 561.0,
+        "y1": 662.0,
+        "x2": 346.0,
+        "y2": 693.0
+      },
+      {
+        "x1": 579.0,
+        "y1": 739.0,
+        "x2": 721.0,
+        "y2": 765.0
+      },
+      {
+        "x1": 848.0,
+        "y1": 1003.0,
+        "x2": 1187.0,
+        "y2": 1038.0
+      }
+    ]
+  },
+  "inn_esp_2": {
+    "image_path": "C:/Users/artas/OneDrive/Рабочий стол/dataset/print/print/print/images/train\\inn_esp_2_1.jpg",
     "regions": []
   },
   "pass": {

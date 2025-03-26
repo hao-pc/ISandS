@@ -1,6 +1,6 @@
 import os
 import json
-from PIL import Image, ImageTk
+from PIL import Image, ImageTk, ImageDraw
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 
@@ -14,15 +14,16 @@ class ScreenshotEditor:
         # Конфигурация
         self.config = self.load_config()
         self.current_keyword = None
-        self.regions = []
-        self.selected_region = None
-        self.current_image = None
-        self.image = None
-        self.current_image_index = 0
-        self.images_for_keyword = []
-        self.dragging_corner = None
-        self.corner_radius = 5
+        self.regions = []  # Список областей
+        self.selected_region = None  # Выбранная область
+        self.current_image = None  # Текущее изображение
+        self.image = None  # Изображение для отображения на холсте
+        self.current_image_index = 0  # Индекс текущего изображения
+        self.images_for_keyword = []  # Список изображений для текущего ключевого слова
+        self.dragging_corner = None  # Текущий перемещаемый угол
+        self.corner_radius = 5  # Радиус углов для захвата
 
+        # GUI элементы
         self.create_widgets()
         self.load_keywords_list()
 
@@ -38,6 +39,7 @@ class ScreenshotEditor:
             return json.load(f)
 
     def create_widgets(self):
+        # Основной контейнер
         main_paned = ttk.PanedWindow(self.root, orient="horizontal")
         main_paned.pack(fill="both", expand=True)
 
@@ -126,6 +128,23 @@ class ScreenshotEditor:
         # Элементы управления свойствами
         self.create_properties_controls()
 
+        self.canvas.bind("<MouseWheel>", self.on_mousewheel)
+        self.canvas.bind("<Shift-MouseWheel>", self.on_shift_mousewheel)
+
+    def on_mousewheel(self, event):
+        """Обрабатывает прокрутку колесом мыши."""
+        if event.num == 4 or event.delta > 0:
+            self.canvas.yview_scroll(-1, "units")
+        elif event.num == 5 or event.delta < 0:
+            self.canvas.yview_scroll(1, "units")
+
+    def on_shift_mousewheel(self, event):
+        """Обрабатывает горизонтальную прокрутку с Shift + колесо мыши."""
+        if event.num == 4 or event.delta > 0:
+            self.canvas.xview_scroll(-1, "units")
+        elif event.num == 5 or event.delta < 0:
+            self.canvas.xview_scroll(1, "units")
+
     def create_properties_controls(self):
         self.prop_vars = {}
         fields = [
@@ -182,9 +201,14 @@ class ScreenshotEditor:
             return
 
         self.images_for_keyword = []
-        for filename in os.listdir(os.path.dirname(self.config[self.current_keyword]["image_path"])):
-            if filename.startswith(self.current_keyword) and (filename.endswith(".jpg") or filename.endswith(".png")):
-                self.images_for_keyword.append(os.path.join(os.path.dirname(self.config[self.current_keyword]["image_path"]), filename))
+        folder = os.path.dirname(self.config[self.current_keyword]["image_path"])
+
+        for filename in os.listdir(folder):
+            if (filename.startswith(f"{self.current_keyword}_") or filename.startswith(f"{self.current_keyword}.")) and \
+                    (filename.endswith(".jpg") or filename.endswith(".png")):
+                self.images_for_keyword.append(os.path.join(folder, filename))
+
+        self.images_for_keyword.sort(key=lambda x: int(x.split("_")[-1].split(".")[0]))
 
     def load_image(self):
         """Загружает текущее изображение."""
@@ -210,20 +234,25 @@ class ScreenshotEditor:
 
         for region in self.regions:
             x1, y1, x2, y2 = region["x1"], region["y1"], region["x2"], region["y2"]
+            # Нормализация координат
             x1, x2 = min(x1, x2), max(x1, x2)
             y1, y2 = min(y1, y2), max(y1, y2)
 
-            self.canvas.create_rectangle(x1, y1, x2, y2, outline="red", tags="regions")
+            # Отрисовка области
+            outline_color = "green" if region == self.selected_region else "red"
+            self.canvas.create_rectangle(x1, y1, x2, y2, outline=outline_color, tags="regions")
+            # Отрисовка углов
             self.canvas.create_oval(x1 - self.corner_radius, y1 - self.corner_radius, x1 + self.corner_radius, y1 + self.corner_radius, fill="blue", tags="corners")
             self.canvas.create_oval(x2 - self.corner_radius, y1 - self.corner_radius, x2 + self.corner_radius, y1 + self.corner_radius, fill="blue", tags="corners")
             self.canvas.create_oval(x1 - self.corner_radius, y2 - self.corner_radius, x1 + self.corner_radius, y2 + self.corner_radius, fill="blue", tags="corners")
             self.canvas.create_oval(x2 - self.corner_radius, y2 - self.corner_radius, x2 + self.corner_radius, y2 + self.corner_radius, fill="blue", tags="corners")
 
     def start_drag(self, event):
-        """Начинает перемещение угла."""
+        """Начинает перемещение угла или выбор области."""
         x = self.canvas.canvasx(event.x)
         y = self.canvas.canvasy(event.y)
 
+        # Проверяем, был ли выбран угол
         for region in self.regions:
             corners = [
                 (region["x1"], region["y1"]),
@@ -234,7 +263,15 @@ class ScreenshotEditor:
             for i, (cx, cy) in enumerate(corners):
                 if abs(cx - x) < self.corner_radius and abs(cy - y) < self.corner_radius:
                     self.dragging_corner = (region, i)
-                    break
+                    return
+
+        for region in self.regions:
+            x1, y1, x2, y2 = region["x1"], region["y1"], region["x2"], region["y2"]
+            if x1 <= x <= x2 and y1 <= y <= y2:
+                self.selected_region = region
+                self.draw_regions()
+                self.update_properties_controls()
+                return
 
     def on_drag(self, event):
         """Обрабатывает перемещение угла."""
@@ -304,7 +341,7 @@ class ScreenshotEditor:
         messagebox.showinfo("Сохранено", "Конфигурация успешно сохранена!")
 
     def create_screenshots(self):
-        """Создает скриншоты по разметке."""
+        """Создает скриншоты по разметке с нумерацией."""
         if not self.current_keyword or not self.current_image:
             messagebox.showerror("Ошибка", "Изображение не загружено!")
             return
@@ -313,31 +350,54 @@ class ScreenshotEditor:
         if not output_folder:
             return
 
+        existing_files = os.listdir(output_folder)
+        existing_numbers = []
+
+        for file_name in existing_files:
+            if file_name.startswith(f"{self.current_keyword}_") and file_name.endswith(".jpg"):
+                try:
+                    number = int(file_name.split("_")[-1].split(".")[0])
+                    existing_numbers.append(number)
+                except ValueError:
+                    continue
+
+        start_number = max(existing_numbers) + 1 if existing_numbers else 1
+
         for i, region in enumerate(self.regions):
             x1, y1, x2, y2 = region["x1"], region["y1"], region["x2"], region["y2"]
             x1, x2 = min(x1, x2), max(x1, x2)
             y1, y2 = min(y1, y2), max(y1, y2)
 
             cropped_image = self.current_image.crop((x1, y1, x2, y2))
-            cropped_image.save(os.path.join(output_folder, f"{self.current_keyword}_{i}.jpg"))
+
+            output_path = os.path.join(output_folder, f"{self.current_keyword}_{start_number + i}.jpg")
+            cropped_image.save(output_path)
 
         messagebox.showinfo("Готово", f"Скриншоты сохранены в папку {output_folder}!")
 
     def select_folder(self):
-        """Выбирает папку с изображениями."""
+        """Выбирает папку с изображениями и загружает ключевые слова."""
         folder_path = filedialog.askdirectory(title="Выберите папку с изображениями")
         if not folder_path:
             return
 
         self.config = {}
         for filename in os.listdir(folder_path):
-            if filename.endswith(".jpg") or filename.endswith(".png"):
-                keyword = filename.split("_")[0]
-                if keyword not in self.config:
-                    self.config[keyword] = {
-                        "image_path": os.path.join(folder_path, filename),
-                        "regions": []
-                    }
+            if filename.endswith((".jpg", ".png")):
+                base_name = os.path.splitext(filename)[0]
+                parts = base_name.split("_")
+
+                if parts[-1].isdigit():
+                    keyword = "_".join(parts[:-1])
+                else:
+                    keyword = base_name
+
+                if keyword:
+                    if keyword not in self.config:
+                        self.config[keyword] = {
+                            "image_path": os.path.join(folder_path, filename),
+                            "regions": []
+                        }
 
         self.save_config()
         self.load_keywords_list()
