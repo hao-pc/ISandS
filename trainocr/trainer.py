@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 
 # Image path
-Image_path = '../inn_esp_2_1.jpg'
+Image_path = '../pass_1.jpg'
 # Initialize EasyOCR reader (Russian language, CPU)
 reader = easyocr.Reader(lang_list=['ru', 'en'],
                         model_storage_directory='model',
@@ -59,5 +59,4 @@ for i, (bbox, text) in enumerate(zip(xyxy, label)):
     cv2.putText(annotated_image, text, (x_min, y_min - 10), font, font_scale, font_color, font_thickness)
 
 # Display and save the annotated image
-cv2.imshow('', annotated_image)
 cv2.imwrite("../output.jpg", annotated_image)

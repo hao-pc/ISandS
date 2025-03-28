@@ -11,6 +11,7 @@ from starlette.responses import JSONResponse
 from ultralytics import YOLO
 import easyocr
 from pdf2image import convert_from_path
+from pydantic import BaseModel
 import python_multipart
 
 app = FastAPI()
@@ -23,6 +24,11 @@ reader = easyocr.Reader(
     user_network_directory='user_network',
     recog_network='iter_50000'
 )
+
+
+class RequestModel(BaseModel):
+    file_base64: str
+    component_name: str
 
 
 def extract_text_from_image(image):
@@ -39,7 +45,37 @@ def extract_text_from_image(image):
     return text
 
 
-@app.post("/evaluate/")
+@app.post("/evaluate_json/")
+async def evaluate_json(request: RequestModel):
+    image_data = base64.b64decode(request.file_base64)
+    image = Image.open(BytesIO(image_data))
+
+    if request.file_base64.startswith('JVBERi'):
+        images = convert_from_path(pdf_path=BytesIO(image_data), poppler_path='C:/poppler-24.08.0/Library/bin')
+        text = ""
+        for img in images:
+            text += extract_text_from_image(img)
+    else:
+        text = extract_text_from_image(image)
+
+    image_np = np.array(image)
+    results = model(image_np)
+
+    detections = [results[0].names[cls.item()] for cls in results[0].boxes.cls.int()]
+    signature = 'signature' in detections
+    stamp = 'stamp' in detections
+    esp = 'esp' in detections
+
+    contains_component = request.component_name.lower() in text
+
+    return JSONResponse({
+        "label": contains_component,
+        "signature": signature,
+        "stamp": stamp,
+        "esp": esp
+    })
+
+@app.post("/evaluate_gui/")
 async def evaluate(file: UploadFile = File(...), component_name: str = Form(...)):
     file_content = await file.read()
     image_data = base64.b64decode(file_content)
@@ -62,12 +98,7 @@ async def evaluate(file: UploadFile = File(...), component_name: str = Form(...)
     stamp = 'stamp' in detections
     esp = 'esp' in detections
 
-    print(component_name)
-    print(text)
-
     contains_component = component_name.lower() in text
-
-    print(contains_component)
 
     return JSONResponse({
         "label": contains_component,
